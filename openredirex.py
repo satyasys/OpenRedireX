@@ -105,7 +105,7 @@ async def fetch_url(session, url):
         async with session.head(url, allow_redirects=True, timeout=10) as response:
             return response
     except (ClientConnectorError, ClientOSError, ServerDisconnectedError, ServerTimeoutError, ServerConnectionError, TooManyRedirects, UnicodeDecodeError, socket.gaierror, asyncio.exceptions.TimeoutError):
-        tqdm.write(f'[ERROR] Error fetching: {url}', file=sys.stderr)
+        #tqdm.write(f'[ERROR] Error fetching: {url}', file=sys.stderr)
         return None
 
 async def process_url(semaphore, session, url, payloads, keyword, pbar):
@@ -118,8 +118,8 @@ async def process_url(semaphore, session, url, payloads, keyword, pbar):
                 # If the string contains "-->", print in green
                 if "-->" in locations:
                     tqdm.write(f'{DARK_GREEN}[FOUND]{ENDC} {LIGHT_GREEN}{filled_url} redirects to {locations}{ENDC}')
-                else:
-                    tqdm.write(f'[INFO] {filled_url} redirects to {locations}')
+                #else:
+                    #tqdm.write(f'[INFO] {filled_url} redirects to {locations}')
             pbar.update()
 
 async def process_urls(semaphore, session, urls, payloads, keyword):
