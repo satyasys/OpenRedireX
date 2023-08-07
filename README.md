@@ -21,8 +21,6 @@
 ```sh
 git clone https://github.com/devanshbatham/openredirex
 cd openredirex
-sudo chmod +x setup.sh
-./setup.sh
 ```
 
 # Usage
@@ -42,7 +40,7 @@ The script expects a list of URLs as input. Each URL should contain the keyword 
 Example usage:
 
 ```sh
-cat list_of_urls.txt |  openredirex -p payloads.txt -k "FUZZ" -c 50
+cat list_of_urls.txt |  python openredirex.py -p payloads.txt -k "FUZZ" -c 50
 ```
 
 
