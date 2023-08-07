@@ -1,4 +1,3 @@
-
 <h1 align="center">
     OpenRedireX
   <br>
@@ -28,7 +27,7 @@ cd openredirex
 The script is executed from the command line and has the following usage options:
 
 ```sh
-openredirex [-p payloads] [-k keyword] [-c concurrency]
+python openredirex.py [-p payloads] [-k keyword] [-c concurrency]
 ```
 
 - `-p`, `--payloads`: File containing a list of payloads. If not specified, a hardcoded list is used.
